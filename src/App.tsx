@@ -53,7 +53,7 @@ function App() {
 		// when submit successful, call geolocation api to get the latitude and longitude based on the country and city first
 		axios
 			.get(
-				`http://api.openweathermap.org/geo/1.0/direct?q=${searchInput.city},${searchInput.country}&limit=1&appid=${process.env.REACT_APP_KEY}`
+				`https://api.openweathermap.org/geo/1.0/direct?q=${searchInput.city},${searchInput.country}&limit=1&appid=${process.env.REACT_APP_KEY}`
 			)
 			.then((res) => {
 				if (res.data.length === 0) {
@@ -106,7 +106,6 @@ function App() {
 				setLoading(false);
 				let resultObj = res.data;
 
-				console.log(resultObj);
 				setSearchResult({
 					city: city,
 					country: country,
