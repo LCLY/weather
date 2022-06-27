@@ -6,5 +6,5 @@ Alternative UI Behavior
 
 - Both inputs can be set to required so user has to enter both city and country before making queries
 
-Link to web app\n
+Link to web app<br/>
 https://weathermerquri.herokuapp.com/
