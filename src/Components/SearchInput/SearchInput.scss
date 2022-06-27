@@ -131,6 +131,7 @@
 		}
 		// for smaller screens
 		&--mobile {
+			user-select: none;
 			width: 3.5rem !important;
 			height: 3.5rem !important;
 			border-radius: 50% !important;

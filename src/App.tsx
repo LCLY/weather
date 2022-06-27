@@ -39,7 +39,6 @@ function App() {
 		city: "",
 		country: "",
 	});
-
 	const [noData, setNoData] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [searchResult, setSearchResult] = useState<ISearchResult | null>(null);
@@ -120,6 +119,7 @@ function App() {
 				setLoading(false);
 				let resultObj = res.data;
 
+				// update the search result for display
 				setSearchResult({
 					city: city,
 					country: country,
@@ -150,13 +150,6 @@ function App() {
 			})
 			.catch((err) => console.log(err));
 	};
-
-	/* ================================================== */
-	/*  useEffect */
-	/* ================================================== */
-
-	/* ================================================== */
-	/* ================================================== */
 
 	return (
 		<div className='App custom__scrollbar'>
