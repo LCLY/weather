@@ -51,9 +51,23 @@ function App() {
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		// when submit successful, call geolocation api to get the latitude and longitude based on the country and city first
+		let query: string[] = [];
+
+		if (searchInput.city.trim() !== "") {
+			// if contains string
+			query.push(searchInput.city);
+		}
+
+		if (searchInput.country.trim() !== "") {
+			// if contains string
+			query.push(searchInput.country);
+		}
+
+		let queryString = query.join(); //join the strings and put into query
+
 		axios
 			.get(
-				`https://api.openweathermap.org/geo/1.0/direct?q=${searchInput.city},${searchInput.country}&limit=1&appid=${process.env.REACT_APP_KEY}`
+				`https://api.openweathermap.org/geo/1.0/direct?q=${queryString}&limit=1&appid=${process.env.REACT_APP_KEY}`
 			)
 			.then((res) => {
 				if (res.data.length === 0) {

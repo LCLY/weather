@@ -44,7 +44,6 @@ const SearchInput: React.FC<Props> = ({
 							</label>
 							<input
 								id={child}
-								required
 								className='searchinput__input'
 								value={(searchInput as any)[child.toLowerCase()]}
 								onChange={(e) => {
@@ -64,6 +63,10 @@ const SearchInput: React.FC<Props> = ({
 					<button
 						className='searchinput__button searchinput__button-submit searchinput__button--desktop'
 						type='submit'
+						disabled={
+							searchInput.city.trim() === "" &&
+							searchInput.country.trim() === ""
+						} //disabled it if both are empty
 					>
 						Search
 					</button>
@@ -80,6 +83,10 @@ const SearchInput: React.FC<Props> = ({
 					<button
 						className='searchinput__button searchinput__button-submit searchinput__button--mobile'
 						type='submit'
+						disabled={
+							searchInput.city.trim() === "" &&
+							searchInput.country.trim() === ""
+						} //disabled it if both are empty
 					>
 						<FontAwesomeIcon icon={faMagnifyingGlass} />
 					</button>
