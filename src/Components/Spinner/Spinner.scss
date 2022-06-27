@@ -1,0 +1,24 @@
+.spinner {
+	&__loader {
+		text-align: center;
+		margin: auto;
+		border: 2px solid transparent; /* Light grey */
+		border-top: 2px solid white; /* Blue */
+		border-right: 2px solid white; /* Blue */
+		border-bottom: 2px solid white; /* Blue */
+		border-radius: 50%;
+		animation: spin 2s linear infinite;
+		&-outerdiv {
+			padding: 5px 0;
+		}
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

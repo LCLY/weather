@@ -1,0 +1,105 @@
+@import "./scss/mixin.scss";
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	position: relative;
+	box-sizing: border-box;
+	// This defines what 1 rem is
+	font-size: 62.5%; // 1 rem = 10px; 10px/16px = 62.5%
+}
+
+body {
+	background-color: #282c34;
+	color: white;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+	&::-webkit-scrollbar {
+		width: 6px !important ;
+		height: 6px !important ;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: rgb(172, 172, 172) !important ;
+		border-radius: 5px !important ;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background: #93a7c0 !important ;
+	}
+	&::-webkit-scrollbar-track {
+		background: #2f373c !important;
+	}
+}
+
+.weather {
+	&__body {
+		font-size: 15px;
+
+		@include respond-to($small-phone) {
+			padding: 3rem 1rem;
+		}
+		@include respond-to($handheld) {
+			padding: 3rem 1rem;
+		}
+		@include respond-to($tablet-portrait-up) {
+			padding: 5rem;
+		}
+	}
+
+	&__header {
+		border-bottom: 1px solid white;
+		padding-bottom: 2rem;
+		margin-bottom: 2rem;
+
+		@include respond-to($small-phone) {
+			font-size: 1.8rem;
+		}
+		@include respond-to($handheld) {
+			font-size: 1.8rem;
+		}
+		@include respond-to($tablet-portrait-up) {
+			font-size: 2.5rem;
+		}
+	}
+
+	&__notfound {
+		margin-top: 2rem;
+		width: 100%;
+		border: 2px solid rgba(255, 255, 255, 0.79);
+		padding: 1rem;
+		background: rgb(181, 87, 87);
+		color: white;
+		font-size: 13px;
+		font-weight: bolder;
+		border-radius: 0.5rem;
+	}
+}
+
+input {
+	padding: 0.3rem;
+}
+
+.flex-align-center {
+	display: flex;
+	align-items: center;
+}
+
+.custom__scrollbar::-webkit-scrollbar {
+	width: 6px !important ;
+	height: 6px !important ;
+}
+.custom__scrollbar::-webkit-scrollbar-thumb {
+	background: rgb(172, 172, 172) !important ;
+	border-radius: 5px !important ;
+}
+.custom__scrollbar::-webkit-scrollbar-thumb:hover {
+	background: #93a7c0 !important ;
+}
+.custom__scrollbar::-webkit-scrollbar-track {
+	background: #2f373c !important;
+}
